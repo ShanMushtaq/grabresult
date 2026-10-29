@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrabResult — AI-assisted research & lead discovery</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231F6FEB'/><circle cx='14' cy='14' r='7' fill='none' stroke='white' stroke-width='3'/><line x1='19' y1='19' x2='27' y2='27' stroke='white' stroke-width='3' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="7" fill="#1F6FEB"/><circle cx="14" cy="14" r="7" fill="none" stroke="#fff" stroke-width="3"/><line x1="19" y1="19" x2="27" y2="27" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+      </span>
+      <span class="wordmark">Grab<b>Result</b></span>
+    </div>
+    <nav class="nav" id="nav">
+      <button data-view="dashboard" class="active">Dashboard</button>
+      <button data-view="new">New Research</button>
+      <button data-view="history">Research History</button>
+      <button data-view="leads">Leads Database</button>
+      <button data-view="imports">Imports</button>
+      <button data-view="exports">Exports</button>
+      <button data-view="settings">Settings</button>
+      <button data-view="help">Help</button>
+    </nav>
+    <div class="sidebar-foot">v1.0 · zero paid APIs</div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <div class="topbar-title" id="viewTitle">Dashboard</div>
+      <div class="topbar-status"><span class="dot ok"></span><span id="apiStatus">Connected</span></div>
+    </header>
+    <main class="content" id="content"></main>
+  </div>
+</div>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>
