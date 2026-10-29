@@ -1,0 +1,20 @@
+# Render.com deployment blueprint (free tier compatible).
+# Connect your repo, then Render provisions the web service below.
+services:
+  - type: web
+    name: grabresult
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn run:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120"
+    envVars:
+      - key: GRABRESULT_SECRET_KEY
+        generateValue: true
+      - key: GRABRESULT_DB_PATH
+        value: /opt/render/project/src/instance/grabresult.db
+      - key: PYTHON_VERSION
+        value: 3.12.3
+# NOTE (free tier): Render free web services sleep when idle and the
+# filesystem is ephemeral — the SQLite database resets on redeploy/restart.
+# For persistent history on Render, attach a persistent disk (paid) or run
+# scheduled exports and download them. See docs/DEPLOYMENT.md.
